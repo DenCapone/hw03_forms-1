@@ -4,7 +4,7 @@
     {% block content %}
     <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">     
-        <h5>Записи сообщества {{ group }}</h5>
+        <h5>Записи сообщества {{ group.title }}</h5>
         <article>
           <h6>Группа - {{ group.title }}:</h6>
           {% for post in page_obj %}
