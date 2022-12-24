@@ -1,5 +1,7 @@
 from django.contrib.auth.views import (
-    LoginView, LogoutView, PasswordResetConfirmView
+    LoginView,
+    LogoutView,
+    PasswordResetConfirmView,
 )
 from django.urls import path
 from . import views
@@ -22,6 +24,6 @@ urlpatterns = [
         name='login'
     ),
     path(
-        'password_reset_form',
+        'password_reset_form/',
         PasswordResetConfirmView.as_view(), name='password_reset_form'),
 ]

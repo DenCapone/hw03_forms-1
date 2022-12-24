@@ -34,7 +34,7 @@
         {{ post.text }}
       </p>
       {% if user == post.author %}
-      <a href="{% url 'posts:post_edit' post_id=post.pk %}">
+      <a href="{% url 'posts:post_edit' post.pk %}">
         <button type="submit" class="btn btn-primary">
           Редактировать
         </button>

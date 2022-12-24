@@ -30,13 +30,12 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.groups.all()[:COUNT_OF_POSTS]
+    posts = group.groups.all()
     paginator = Paginator(posts, COUNT_OF_POSTS)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
         'group': group,
-        'posts': posts,
         'page_obj': page_obj,
     }
     return render(request, 'posts/group_list.html', context)
@@ -50,7 +49,6 @@ def profile(request, username):
     page_obj = paginator.get_page(page_number)
     context = {
         'author': author,
-        'posts': posts,
         'page_obj': page_obj,
     }
     return render(request, 'posts/profile.html', context)

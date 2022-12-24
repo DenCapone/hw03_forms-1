@@ -27,7 +27,7 @@
               {% endif %}
               <div class="card-body">   
                 {% if is_edit %}     
-                 <form method="post" action="{% url 'posts:post_edit' post_id=post.pk %}">
+                 <form method="post" action="{% url 'posts:post_edit' post.pk %}">
                 {% else %}
                   <form method="post" action="{% url 'posts:post_create' %}">
                 {% endif %}
