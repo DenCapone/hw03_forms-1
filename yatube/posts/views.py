@@ -9,7 +9,7 @@ COP_MAIN_PAGE = 17
 
 
 def index(request):
-    post_list = Post.objects.all().order_by('-pub_date')
+    post_list = Post.objects.all()
     # Если порядок сортировки определен в классе Meta модели,
     # запрос будет выглядеть так:
     # post_list = Post.objects.all()
@@ -67,7 +67,7 @@ def post_detail(request, post_id):
 
 @login_required
 def post_create(request):
-    form = PostForm(request.POST)
+    form = PostForm(request.POST or None)
     context = {'form': form}
     if form.is_valid():
         post = form.save(commit=False)
